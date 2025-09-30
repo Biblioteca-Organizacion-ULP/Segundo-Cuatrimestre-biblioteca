@@ -1,0 +1,77 @@
+pasaje a tablas
+esquema
+Correspondencia
+
+Clave primaria: Importante para la la Entidad. NO PUEDE ser null
+
+Clave foranea: viene de una relacion externa
+
+Cardinalidad define si es clave foranea
+
+N : una base de datos es un conjunto de esquemas
+
+entidad fuerte: Rectangulo, entidad doble doble recuadro.
+entidad doble no tiene clave primaria sino clave discriminante
+
+ejemplar : conjunto de todas las duplas (o base de datos)
+
+esquema es equivalente a encabezado de la talbla.
+
+clave primaria no null: se modifica la base de datos para permitir las llaves primarias null
+
+dominio: toda las posibles valor que puede tener un atributo
+imagen : todos los valores no repetidos ? (no estoy seguro)
+
+circulo encima de circulo: atributo multivalorado
+
+atributo compuesto: como dice su nombre, el atributo es compuesto por varias partes (valor)
+
+un atributo tiene un conjunto de valores = atributo multivalorado
+
+atributo derivado: el valor se deriva de otro valores de atributo (el atributo derivado no existe en el sistema, se calcula de otro) 
+
+atributo multivalorado, genera otro esquema aparte (tambien dicho diagrama)(funciona como entidad debil)
+
+relacion de muchos a uno: llevo la clave primaria del uno al muchos
+relacion muchos a muchos: pasa a ser en modo tablas (creo que usa las claves primarias de ambos relacionados)
+
+las duplas van entre llaves {(213,p17)}{(201,p3)}
+
+restricion solapada, parcial, total (que es?)
+parcial = puede ser de una, varia o ninguna
+solapada/disjunta = solo puede estar en una o ninguna
+total = tiene que ser si o si de una o de las dos
+total disjunta: o esta en una o en otra (no se puede ninguna)
+
+esquema(encabezados de esquema / conjuntos de atributos)
+Integridad Referencial
+
+Entidad Relacion: conjunto de esquemas
+Una base de datos relacional consiste en un conjunto de tablas
+
+
+restricion de dominio: que tipo de dato puede tener el dominio
+valor unico: no puede tener otro valor igual (columna/atributo)
+clave primaria: columna de una tabla que identifican a una sola fila
+
+esquema:Conjunto de atributos
+base de datos relacional : es un conjunto de esquemas
+
+
+----------------------
+operador(sigma o)
+unario, binario
+sigma : restricion o selecion
+
+proyecion(R o pi)
+elimina duplas repetidas o muestra un solo atributo
+
+producto cartesiano
+todos de uno juntados con todos del otro
+
+aridad: cantidad de atributos de un esquema/tabla
+argumento: 
+
+expresion algebraica equivalente a esquemas
+
+relacion natural = join
