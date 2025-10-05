@@ -1,0 +1,31 @@
+defer si lo usas externo
+async si es interno, antes del body y en el mismo archivo.
+
+
+cuando defino algo con LET puedo cambiar su valor
+cuando yo defino con CONST no puedo cambiar su valor
+
+para leer la variable
+console.log(variable1)
+
+
+let manera1 = 'hola'
+let manera2 = 'hola manera 3 - ${ 400 * 2}'
+
+
+typeof para saber que tipo de variable es
+
+= asginacion
+== comparación es igual? No tiene en cuenta el tipo
+=== comparación, es igual en valor y en tipo
+
+por ejemplo
+console.log(3 == '3') es true ya que no tiene en cuenta el tipo
+console.log (3 === 3) es false.
+
+console.log (3 =/= '3') false
+console
+
+
+tipo de if con return
+return edad >= 18 ? 'Mayor de edad' : 'No es Mayor de edad';
