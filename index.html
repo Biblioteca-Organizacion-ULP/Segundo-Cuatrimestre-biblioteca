@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Desarrollo Software</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>Biblioteca de Desarrollo de Software</h1>
+            <p>Selecciona una materia para ver los archivos o búscalos directamente</p>
+            <div class="search-container">
+                <input type="search" id="search-bar" placeholder="Buscar en todos los archivos...">
+            </div>
+        </header>
+
+        <nav id="subject-nav">
+            <button class="nav-button" data-subject="db">Base de Datos</button>
+            <button class="nav-button" data-subject="lab">Laboratorio 1</button>
+            <button class="nav-button" data-subject="web">Web 1</button>
+        </nav>
+
+        <div id="file-viewer-area" class="hidden">
+            <div class="file-header">
+                <button id="back-button">&larr; Volver</button>
+                <h2 id="file-subject-title"></h2>
+            </div>
+            <div id="file-list"></div>
+        </div>
+
+        <main id="content-viewer">
+            <div class="welcome-message">
+                <h2>Comienza a estudiar</h2>
+                <p>El contenido del archivo que elijas aparecerá aquí.</p>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
