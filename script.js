@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const backButton = document.getElementById('back-button');
     const fileListContainer = document.getElementById('file-list');
     const fileSubjectTitle = document.getElementById('file-subject-title');
+    const searchBar = document.getElementById('search-bar');
 
     const files = {
         db: {
@@ -47,6 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    function showDefaultView() {
+        fileViewerArea.classList.add('hidden');
+        subjectNav.classList.remove('hidden');
+    }
+
     subjectNav.addEventListener('click', (e) => {
         if (e.target.classList.contains('nav-button')) {
             const subject = e.target.dataset.subject;
@@ -60,19 +66,87 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     backButton.addEventListener('click', () => {
-        fileViewerArea.classList.add('hidden');
-        subjectNav.classList.remove('hidden');
+        showDefaultView();
+        searchBar.value = '';
     });
 
     fileListContainer.addEventListener('click', (e) => {
-        e.preventDefault();
         if (e.target.classList.contains('file-link')) {
+            e.preventDefault();
             const allLinks = fileListContainer.querySelectorAll('.file-link');
             allLinks.forEach(link => link.classList.remove('active'));
             e.target.classList.add('active');
-            
+
             const filePath = e.target.getAttribute('href');
-            contentViewer.innerHTML = `<embed id="file-embed" src="${filePath}" />`;
+
+            if (filePath.toLowerCase().endsWith('.docx')) {
+                const link = document.createElement('a');
+                link.href = filePath;
+                link.download = filePath.split('/').pop();
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                contentViewer.innerHTML = `
+                    <div class="welcome-message">
+                        <h2>Descarga iniciada</h2>
+                        <p>Los archivos .docx se descargan automáticamente.</p>
+                    </div>
+                `;
+            } else {
+                contentViewer.innerHTML = `<embed id="file-embed" src="${filePath}" />`;
+            }
+        }
+    });
+
+    function performSearch() {
+        const query = searchBar.value.toLowerCase().trim();
+
+        if (query.length < 2) {
+            showDefaultView();
+            return;
+        }
+
+        let resultsHTML = '';
+        const tempDiv = document.createElement('div');
+
+        for (const subjectKey in files) {
+            const subject = files[subjectKey];
+            tempDiv.innerHTML = subject.items;
+            const links = tempDiv.querySelectorAll('.file-link');
+
+            links.forEach(link => {
+                if (link.textContent.toLowerCase().includes(query)) {
+                    resultsHTML += `
+                        <div class="search-result-item">
+                            <span class="subject-tag">${subject.title}:</span>
+                            ${link.outerHTML}
+                        </div>
+                    `;
+                }
+            });
+        }
+
+        if (resultsHTML === '') {
+            resultsHTML = '<p>No se encontraron archivos.</p>';
+        }
+
+        fileSubjectTitle.textContent = `Resultados para: "${query}"`;
+        fileListContainer.innerHTML = resultsHTML;
+        subjectNav.classList.add('hidden');
+        fileViewerArea.classList.remove('hidden');
+    }
+
+    searchBar.addEventListener('input', performSearch);
+
+    searchBar.addEventListener('blur', () => {
+        if (searchBar.value.trim() === '') {
+            showDefaultView();
+        }
+    });
+
+    searchBar.addEventListener('search', () => {
+        if (searchBar.value.trim() === '') {
+            showDefaultView();
         }
     });
 });
