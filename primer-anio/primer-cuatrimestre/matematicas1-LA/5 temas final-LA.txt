@@ -1,0 +1,10 @@
+-Relaciones
+
+funciones lieales : lineas rectas
+funciones cuadraticas : parabola
+el dominio son los reales
+la imagen depende si es concava hacia ariva o abajo
+la funcion cuadratica si o si corta una vez al eje y
+
+-no se toman pide rescribir definiciones.
+- entender teoria para resolver ejercicios
