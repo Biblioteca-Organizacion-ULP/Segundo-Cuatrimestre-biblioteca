@@ -1,0 +1,29 @@
+RELACIONES DE :
+
+Orden Parcial:     Orden Total       Equivalencia
+
+-Reflexiva         -Reflexiva        -Reflexiva
+-Anti Simetrica	   -Anti Simetrica   -Simetrica	
+-Transitiva	   -Transitiva       -Transitiva
+		   -Completa
+
+
+---------------Simbologia-------------
+
+/////////////Cardinalidad//////////
+
+ |N|
+ #N
+  n(R)	  
+
+////////////Complemento//////////////
+
+  Ac    (arriba c)          
+  -A    (a la izquierda -)  
+  Añ    (arriba guiño no n)      
+
+/////////Diferencia Simetrica///////
+
+ Δ              (triangulo) 
+
+  

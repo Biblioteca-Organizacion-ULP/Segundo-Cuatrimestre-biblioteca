@@ -1,0 +1,57 @@
+----------------------------------
+-------funciones en general-------
+----------------------------------
+
+es creciente si:   f(x1) < f(x2) 
+es decreciente si: f(x1) > f(x2) 
+
+------------------------------------
+----------- funcion lineal ---------
+------------------------------------
+
+        y= m.x + c (explicita)
+
+++++++++ + + + calcular + + + +++++++
+
+calcular pendiente (m):   (y1-y0) / (x1-x0)
+pasa por el punto(x,y):   y = y0 + m (x-0)
+rectas perpendiculares:   m1.m2 = -1
+
+
+//////////////teoria///////////////
+
+paralelas: tienen misma pendiente
+funcion lineal: siempre su dominio son los reales
+
+---------------------------------
+------- funcion cuadratica-------
+---------------------------------
+
+  y= ax2 + ax c (a distinto de 0)
+
++++++++++ caracteristicas +++++++++
+
+es par:   f(-x) = f(x)
+es impar: f(-x) = - f(x),  
+
++-+-+-+-+-+ traslaciones +-+-+-+-+
+
+mueve la grafica en el eje y:  y = f(x) + c 
+mueve la grafica en el eje x:  y = f(x –/+ c) 
+
+++++++++ + + +   calcular   + + + +++++++
+
+intersecion con y:  f(0)= 02 + 0 + c = (y)
+
+X del vertice : -b/2a
+Y del vertice :  f(Xv)
+Discriminante :  b2 -4.a.c (0<d=0,0=0:1,0>d=2)
+
+
+funcion exponencial
+
+
+
+funcion exponencial inversa de logaritmica y viceversa
+
+
