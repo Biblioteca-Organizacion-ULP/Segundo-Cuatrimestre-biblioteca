@@ -81,7 +81,7 @@ body {
     margin-bottom: 0.25rem;
 }
 
-#subject-nav {
+#nav-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -105,14 +105,14 @@ body {
     background-color: var(--secondary-surface);
 }
 
-.file-header {
+.file-header, #nav-header {
     display: flex;
     align-items: center;
     gap: 1rem;
     margin-bottom: 1rem;
 }
 
-#back-button {
+#back-button, #nav-back-button {
     background: var(--secondary-surface);
     border: 1px solid var(--border-color);
     color: var(--text-color);
@@ -122,13 +122,14 @@ body {
     font-size: 0.9rem;
     font-weight: 500;
     transition: background-color 0.2s ease;
+    white-space: nowrap;
 }
 
-#back-button:hover {
+#back-button:hover, #nav-back-button:hover {
     background-color: #3c3c3c;
 }
 
-#file-subject-title {
+#file-subject-title, #nav-title {
     font-size: 1.5rem;
 }
 
@@ -216,7 +217,7 @@ body {
         margin-top: 1.5rem;
     }
     
-    #subject-nav {
+    #nav-container {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1.5rem;
     }
@@ -226,12 +227,12 @@ body {
         font-size: 1.2rem;
     }
 
-    .file-header {
+    .file-header, #nav-header {
         gap: 1.5rem;
         margin-bottom: 1.5rem;
     }
 
-    #file-subject-title {
+    #file-subject-title, #nav-title {
         font-size: 1.8rem;
     }
 

@@ -13,21 +13,23 @@
     <div class="container">
         <header class="main-header">
             <h1>Biblioteca de Desarrollo de Software</h1>
-            <p>Selecciona una materia para ver los archivos o búscalos directamente</p>
+            <p>Selecciona un año para ver las materias o busca directamente</p>
             <div class="search-container">
                 <input type="search" id="search-bar" placeholder="Buscar en todos los archivos...">
             </div>
         </header>
 
-        <nav id="subject-nav">
-            <button class="nav-button" data-subject="db">Base de Datos</button>
-            <button class="nav-button" data-subject="lab">Laboratorio 1</button>
-            <button class="nav-button" data-subject="web">Web 1</button>
+        <div id="nav-header" class="file-header hidden">
+            <button id="nav-back-button">&larr; Volver</button>
+            <h2 id="nav-title"></h2>
+        </div>
+
+        <nav id="nav-container">
         </nav>
 
         <div id="file-viewer-area" class="hidden">
             <div class="file-header">
-                <button id="back-button">&larr; Volver</button>
+                <button id="back-button">&larr; Volver a materias</button>
                 <h2 id="file-subject-title"></h2>
             </div>
             <div id="file-list"></div>
@@ -35,7 +37,7 @@
 
         <main id="content-viewer">
             <div class="welcome-message">
-                <h2>Comienza a estudiar usando comtenido resumido</h2>
+                <h2>Comienza a estudiar usando contenido resumido</h2>
                 <p>El contenido del archivo que elijas aparecerá aquí.</p>
             </div>
         </main>
