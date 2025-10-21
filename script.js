@@ -132,15 +132,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         let html = '';
-        if (!currentContext) {
-            navigationStack.pop(); 
-            showMessage("Error", "No se pudo encontrar este nivel.");
-            return;
+        
+        // --- INICIO DE MODIFICACIÓN 1 ---
+        // El bloque `if (!currentContext)` original causaba el error.
+        // Se reemplaza por este `if (currentContext)` que solo
+        // intenta iterar si el contenido no es nulo.
+        if (currentContext) {
+            for (const key in currentContext) {
+                html += `<button class="nav-button" data-key="${key}">${currentContext[key].title}</button>`;
+            }
         }
+        // Si currentContext es nulo (como en 2do o 3er año), html quedará vacío.
+        // --- FIN DE MODIFICACIÓN 1 ---
 
-        for (const key in currentContext) {
-            html += `<button class="nav-button" data-key="${key}">${currentContext[key].title}</button>`;
-        }
         navContainer.innerHTML = html;
 
         if (navigationStack.length === 0) {
@@ -156,7 +160,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         navContainer.classList.remove('hidden');
         fileViewerArea.classList.add('hidden');
-        showWelcomeMessage();
+
+        // --- INICIO DE MODIFICACIÓN 2 ---
+        // Se añade lógica para mostrar el mensaje "no disponible"
+        // en el contentViewer SIN ocultar el navHeader.
+        if (html === '' && navigationStack.length > 0) {
+            contentViewer.innerHTML = `
+                <div class="welcome-message">
+                    <h2>${navTitle.textContent}</h2>
+                    <p>Contenido aún no disponible, vuelva pronto.</p>
+                </div>
+            `;
+        } else {
+            showWelcomeMessage();
+        }
+        // --- FIN DE MODIFICACIÓN 2 ---
     }
 
     function showFiles(subjectData) {
@@ -186,16 +204,21 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const selectedItem = currentLevel[key];
 
-            if (selectedItem.content === null) {
-                showMessage(selectedItem.title, "Contenido aún no disponible, vuelva pronto.");
-                searchBar.value = '';
-            } else if (selectedItem.items) {
+            // --- INICIO DE MODIFICACIÓN 3 ---
+            // Se unificó la lógica. Si es una materia (tiene .items) va a showFiles.
+            // Si es una categoría (content es nulo O es un objeto),
+            // simplemente navega.
+            if (selectedItem.items) {
                 navigationStack.push(key);
                 showFiles(selectedItem);
-            } else if (selectedItem.content) {
+            } else if (selectedItem.content || selectedItem.content === null) {
                 navigationStack.push(key);
                 renderNavigation();
+                if (selectedItem.content === null) {
+                    searchBar.value = '';
+                }
             }
+            // --- FIN DE MODIFICACIÓN 3 ---
         }
     });
 
@@ -206,10 +229,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     backButton.addEventListener('click', () => {
+    const query = searchBar.value.trim();
+
+    if (query.length > 0) {
+        searchBar.value = '';
+        navigationStack = [];
+        renderNavigation();
+    } else {
         navigationStack.pop();
         renderNavigation();
-        searchBar.value = '';
-    });
+    }
+});
 
     navHomeButton.addEventListener('click', goToHome);
     homeButton.addEventListener('click', goToHome);
