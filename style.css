@@ -112,7 +112,7 @@ body {
     margin-bottom: 1rem;
 }
 
-#back-button, #nav-back-button {
+#back-button, #nav-back-button, .home-button {
     background: var(--secondary-surface);
     border: 1px solid var(--border-color);
     color: var(--text-color);
@@ -125,7 +125,7 @@ body {
     white-space: nowrap;
 }
 
-#back-button:hover, #nav-back-button:hover {
+#back-button:hover, #nav-back-button:hover, .home-button:hover {
     background-color: #3c3c3c;
 }
 

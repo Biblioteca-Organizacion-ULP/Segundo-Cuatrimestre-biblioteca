@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navHeader = document.getElementById('nav-header');
     const navBackButton = document.getElementById('nav-back-button');
+    const navHomeButton = document.getElementById('nav-home-button');
     const navTitle = document.getElementById('nav-title');
     const navContainer = document.getElementById('nav-container');
 
     const fileViewerArea = document.getElementById('file-viewer-area');
     const contentViewer = document.getElementById('content-viewer');
     const backButton = document.getElementById('back-button');
+    const homeButton = document.getElementById('home-button');
     const fileListContainer = document.getElementById('file-list');
     const fileSubjectTitle = document.getElementById('file-subject-title');
     const searchBar = document.getElementById('search-bar');
@@ -166,6 +168,12 @@ document.addEventListener('DOMContentLoaded', () => {
         showWelcomeMessage();
     }
 
+    function goToHome() {
+        navigationStack = [];
+        renderNavigation();
+        searchBar.value = '';
+    }
+
     navContainer.addEventListener('click', (e) => {
         if (e.target.classList.contains('nav-button')) {
             const key = e.target.dataset.key;
@@ -202,6 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
         renderNavigation();
         searchBar.value = '';
     });
+
+    navHomeButton.addEventListener('click', goToHome);
+    homeButton.addEventListener('click', goToHome);
 
     fileListContainer.addEventListener('click', (e) => {
         if (e.target.classList.contains('file-link')) {
