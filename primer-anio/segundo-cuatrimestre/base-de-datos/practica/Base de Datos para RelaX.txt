@@ -1,0 +1,87 @@
+group: CAMIONES S.A
+
+ Camionero = {
+dni, nombre, telefono, direccion, salario, codigo_provincia
+30111222, 'Carlos', 1123456789, 'Av. Rivadavia 1234', 250000, 1001
+29233444, 'Mario', 1134567890, 'Calle Mitre 456', 280000, 1704
+28344555, 'Roberto', 1145678901, 'Ruta 3 km 25', 300000, 5000
+27455666, 'Juan', 1156789012, 'San Martín 890', 270000, 3000
+26566777, 'Hector', 1167890123, 'Belgrano 321', 260000, 1708
+25677888, 'Oscar', 1178901234, 'Av. Libertad 654', 320000, 1010
+24788999, 'Miguel', 1189012345, 'Sarmiento 777', 290000, 5010
+23899000, 'Ricardo', 1190123456, 'Independencia 987', 310000, 3100
+22910111, 'Andres', 1101234567, 'Colon 555', 280000, 3400
+27031322, 'Tomás', 1290178456, 'Santa Delia 233', 260000, 5500
+24777999, 'Agustín', 1123432189, 'Jofré 345', 250000, 4000
+23711000, 'Josemir', 1107890021, 'Calle Incú 90', 300000, 3300
+29839000, 'Mariano', 1187609012, 'Av. Deliciosa 234',	350000, 4400
+}
+
+ Conducir = {
+dni, matricula, fecha_manejo
+30111222, 'ABC123', '2024-05-10'
+29233444, 'DEF456', '2024-06-12'
+28344555, 'GHI789', '2024-07-20'
+27455666, 'JKL321', '2024-04-18'
+26566777, 'MNO654', '2024-08-05'
+25677888, 'PQR987', '2024-09-02'
+24788999, 'STU111', '2024-03-14'
+23899000, 'VWX222', '2024-07-28'
+22910111, 'YZA333', '2024-01-30'
+21021222, 'BCD444', '2024-02-25'
+30111222, 'CDE555', '2024-06-22'
+28344555, 'FGH666', '2024-08-11'
+24788999, 'HIJ777', '2024-05-19'
+21021222, 'KLM888', '2024-09-03'
+}
+
+ Camion = {
+matricula, modelo, tipo, potencia
+'ABC123', 'Scania R500', 'Semirremolque', 500
+'DEF456', 'Volvo FH16', 'Tolva', 540
+'GHI789', 'Mercedes Actros', 'Jaula', 480
+'JKL321', 'Iveco Stralis', 'Cisterna', 460
+'MNO654', 'MAN TGX', 'Plataforma', 520
+'PQR987', 'Renault Magnum', 'Semirremolque', 450
+'STU111', 'DAF XF', 'Tolva', 480
+'VWX222', 'Scania G410', 'Plataforma', 410
+'YZA333', 'Mercedes Atego', 'Jaula', 320
+'BCD444', 'Iveco Eurocargo', 'Cisterna', 340
+'CDE555', 'Volvo FMX', 'Tolva', 500
+'FGH666', 'MAN TGS', 'Semirremolque', 540
+'HIJ777', 'Scania R730', 'Jaula', 730
+'KLM888', 'Volvo FH13', 'Plataforma', 460
+}
+
+ Provincia = {
+nombre, codigo_provincia
+'Ciudad Autónoma de Buenos Aires', 1001
+'Buenos Aires', 1704
+'Córdoba', 5000
+'Santa Fe', 3000
+'Mendoza', 5500
+'Tucumán', 4000
+'Entre Ríos', 3100
+'Corrientes', 3400
+'Misiones', 3300
+'Salta', 4400
+'San Luis', 1708
+'Formosa', 1010
+'Santiago del Estero', 5010
+}
+
+ Paquete = {
+codigo, dni, codigo_provincia, descripcion, destinatario, destinatario_direccion
+10001, 30111222, 1001, 'Electrodomésticos', 'Juan Pérez', 'Av. Corrientes 1200'
+10002, 29233444, 1704, 'Muebles', 'María López', 'Calle San Martín 345'
+10003, 28344555, 5000, 'Repuestos de auto', 'Carlos García', 'Av. Colón 789'
+10004, 27455666, 3000, 'Ropa', 'Ana Torres', 'Bv. Gálvez 456'
+10005, 26566777, 5500, 'Herramientas', 'Diego Fernández', 'Av. San Martín 234'
+10006, 25677888, 4000, 'Material escolar', 'Lucía Romero', 'Calle Belgrano 678'
+10007, 24788999, 3100, 'Medicamentos', 'Sofía Martínez', 'Ruta 14 km 12'
+10008, 23899000, 3400, 'Alimentos no perecederos', 'Pedro González', 'Av. Libertad 999'
+10009, 22910111, 3300, 'Electrónica', 'Valeria Suárez', 'Calle Mitre 432'
+10010, 21021222, 4400, 'Libros', 'Federico Álvarez', 'Av. Güemes 222'
+}
+
+
