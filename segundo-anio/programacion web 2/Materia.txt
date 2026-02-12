@@ -1,0 +1,21 @@
+Materia: PROGRAMACIÓN WEB II
+---------------------------------------
+
+Necesario Para cursar :
+
+regularizada = Administración de Base de Datos y Programación Web I
+
+--------------------------------------
+
+Necesario para rendir Finales :
+
+aprobada = Administración de Base de Datos y Programación Web I
+
+----------------------------------------
+Se puede rendir libre:
+
+---------------------------------------
+Condiciónes para Aprobar:
+
+---------------------------------------
+Condiciónes para Promocionar:

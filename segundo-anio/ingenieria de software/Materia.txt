@@ -1,0 +1,23 @@
+Materia: INGENIERÍA DE SOFTWARE
+--------------------------------------- 
+
+Necesario Para cursar :
+
+regularizada = Laboratorio de Programación I
+aprobada     = Programación I
+
+-------------------------------------- 
+
+Necesario para rendir Finales :
+
+aprobada = Laboratorio de Programación I
+
+----------------------------------------
+
+ Se puede rendir libre:
+
+--------------------------------------- 
+Condiciónes para Aprobar:
+
+---------------------------------------
+Condiciónes para Promocionar:
